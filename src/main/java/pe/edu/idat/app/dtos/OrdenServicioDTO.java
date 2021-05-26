@@ -8,6 +8,8 @@ import javax.validation.constraints.NotEmpty;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import pe.edu.idat.app.entidad.OrdenServicio;
+import pe.edu.idat.app.entidad.enums.Estado;
+import pe.edu.idat.app.entidad.enums.Prioridad;
 
 public class OrdenServicioDTO implements Serializable {
 
@@ -72,8 +74,8 @@ public class OrdenServicioDTO implements Serializable {
 		this.fechaCierre = fechaCierre;
 	}
 
-	public Integer getPrioridad() {
-		return prioridad;
+	public Prioridad getPrioridad() {
+		return Prioridad.toEnum(this.prioridad);
 	}
 
 	public void setPrioridad(Integer prioridad) {
@@ -88,8 +90,8 @@ public class OrdenServicioDTO implements Serializable {
 		this.observaciones = observaciones;
 	}
 
-	public Integer getEstado() {
-		return estado;
+	public Estado getEstado() {
+		return Estado.toEnum(this.estado);
 	}
 
 	public void setEstado(Integer estado) {
